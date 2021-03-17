@@ -7,11 +7,14 @@ import { GetServerSidePropsContext } from 'next';
 import { ReactNode } from 'react';
 
 interface ChakraProps {
-  cookies?: string;
+  cookies: string;
   children: ReactNode;
 }
 
-export function UIProvider({ children, cookies }: ChakraProps): JSX.Element {
+export function UIProvider({
+  children,
+  cookies = '',
+}: ChakraProps): JSX.Element {
   return (
     <ChakraProvider
       colorModeManager={
